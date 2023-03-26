@@ -24,6 +24,6 @@ urlpatterns = [
     path('', index, name="index"),
     path('animal/list', AnimalList.as_view(), name="animal-list"),
     path('platillo/list', AnimalMineList.as_view(), name="animal-mine")
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
