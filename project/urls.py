@@ -25,4 +25,5 @@ urlpatterns = [
     path('animal/list', AnimalList.as_view(), name="animal-list"),
     path('platillo/list', AnimalMineList.as_view(), name="animal-mine")
 ]
+
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
