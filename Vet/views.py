@@ -45,7 +45,7 @@ class AnimalDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 class AnimalCreate(LoginRequiredMixin, CreateView):
     model = Animal
-    success_url = reverse_lazy("platillo-list")
+    success_url = reverse_lazy("animal-list")
     fields = [ 'nombre' ,'detalle', 'precio' ,'imagen']
 
     def form_valid(self, form):
