@@ -28,8 +28,8 @@ class AnimalUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def test_func(self):
         user_id = self.request.user.id
-        platillo_id =  self.kwargs.get("pk")
-        return Animal.objects.filter(propietario=user_id, id=platillo_id).exists()
+        animal_id =  self.kwargs.get("pk")
+        return Animal.objects.filter(propietario=user_id, id=animal_id).exists()
 
 
 class AnimalDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
@@ -39,14 +39,14 @@ class AnimalDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         user_id = self.request.user.id
-        platillo_id =  self.kwargs.get("pk")
-        return Animal.objects.filter(propietario=user_id, id=platillo_id).exists()
+        animal_id =  self.kwargs.get("pk")
+        return Animal.objects.filter(propietario=user_id, id=animal_id).exists()
 
 
 class AnimalCreate(LoginRequiredMixin, CreateView):
     model = Animal
     success_url = reverse_lazy("animal-list")
-    fields = [ 'nombre' ,'detalle', 'precio' ,'imagen']
+    fields = [ 'nombre_animal' ,'tipo_animal', 'edad_animal' ,'precio_tratamiento','pre_diagnostico', 'imagen','propietario' ]
 
     def form_valid(self, form):
         form.instance.propietario = self.request.user
