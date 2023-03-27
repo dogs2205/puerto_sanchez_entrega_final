@@ -26,7 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name="index"),
     path('animal/list', AnimalList.as_view(), name="animal-list"),
-    path('platillo/list', AnimalMineList.as_view(), name="animal-mine"),
+    path('animal/list/', AnimalMineList.as_view(), name="animal-mine"),
     path('animal/<pk>/update', AnimalUpdate.as_view(), name="animal-update"),
     path('animal/<pk>/delete', AnimalDelete.as_view(), name="animal-delete"),
     path('animal/create', AnimalCreate.as_view(), name="animal-create"),
