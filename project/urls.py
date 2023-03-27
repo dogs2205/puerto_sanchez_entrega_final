@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Vet.views import index, AnimalList, AnimalMineList, AnimalUpdate, AnimalDelete, AnimalCreate
+from Vet.views import index, AnimalList, AnimalMineList, AnimalUpdate, AnimalDelete, AnimalCreate, Login, Logout, SignUp
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -27,6 +27,9 @@ urlpatterns = [
     path('animal/<pk>/update', AnimalUpdate.as_view(), name="animal-update"),
     path('animal/<pk>/delete', AnimalDelete.as_view(), name="animal-delete"),
     path('animal/create', AnimalCreate.as_view(), name="animal-create"),
+    path('login/', Login.as_view(), name="login"),
+    path('logout/', Logout.as_view(), name="logout"),
+    path('signup/', SignUp.as_view(), name="signup"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 #urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
