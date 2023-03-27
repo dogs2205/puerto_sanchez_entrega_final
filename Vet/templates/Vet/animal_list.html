@@ -19,8 +19,8 @@
                 <div class="btn-group">
                 {% if user.is_authenticated and user.id == animal.propietario.id  %}
                 
-                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    <a href="{% url 'animal-delete' animal.id %}" type="button" class="btn btn-sm btn-outline-secondary">Borrar</a>
+                    <a href="{% url 'animal-update' animal.id %}" type="button" class="btn btn-sm btn-outline-secondary">Actualizar</a>
                 {% endif %}
                 </div>
                 <small class="text-muted">${{ animal.precio_tratamiento }}</small>
