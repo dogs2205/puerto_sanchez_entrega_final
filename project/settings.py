@@ -121,6 +121,7 @@ USE_TZ = True
 #STATIC_ROOT = str(Path(BASE_DIR) / 'static')
 #STATIC_URL = '/static/'
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
@@ -141,4 +142,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 #MEDIA_ROOT = str(Path(BASE_DIR) / 'media')
 #MEDIA_URL = 'media/'
 
-LOGIN_URL = "animal-mine"
+LOGIN_URL = "animal-list"

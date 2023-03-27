@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Vet.views import index, AnimalList, AnimalMineList, AnimalUpdate, AnimalDelete, AnimalCreate, Login, Logout, SignUp
+from Vet.views import index, AnimalList, AnimalMineList, AnimalUpdate, AnimalDelete, AnimalCreate,Login, Logout, SignUp
 from django.conf import settings
 from django.conf.urls.static import static
+#from .view import profile_view
+#from django.contrib.auth.views import LoginView
+#from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,6 +33,11 @@ urlpatterns = [
     path('login/', Login.as_view(), name="login"),
     path('logout/', Logout.as_view(), name="logout"),
     path('signup/', SignUp.as_view(), name="signup"),
+    #path('accounts/profile/', profile_view, name='profile'),
+    
+    #path('', views.home, name='home'),
+    #path('profile/', views.profile, name='profile'),
+    #path('login/', LoginView.as_view(template_name='registration/login.html'), name='login'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 #urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
