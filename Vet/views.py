@@ -64,16 +64,18 @@ class AnimalSearch(ListView):
         return result
 
 class Login(LoginView):
+    template_name = 'registration/login.html'
     next_page = reverse_lazy("animal-list")
 
 
 class SignUp(CreateView):
     form_class = UserCreationForm
-    template_name = 'registration/signup.html'
     success_url = reverse_lazy('animal-list')
 
 
 class Logout(LogoutView):
     template_name = "registration/logout.html"
+
+
 
 # Create your views here.
