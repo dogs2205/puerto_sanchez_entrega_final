@@ -142,5 +142,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 #MEDIA_ROOT = str(Path(BASE_DIR) / 'media')
 #MEDIA_URL = 'media/'
 
-LOGIN_URL = "animal-list"
+LOGIN_URL = "animal-mine"
 LOGIN_REDIRECT_URL='/'

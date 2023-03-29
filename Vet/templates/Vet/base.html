@@ -181,9 +181,12 @@
         <a href="{% url 'animal-create' %}" class="navbar-brand d-flex align-items-center">
           <strong>Nuevo ingreso</strong>
         </a>
+        <a href="{% url 'animal-list' %}" class="navbar-brand d-flex align-items-center">
+          <strong>Inicio</strong>
+        </a>
 
         <a href="{% url 'logout' %}" class="navbar-brand d-flex align-items-center">
-          <strong>Logout</strong>
+          <strong>Hola {{user.username}} | Salir</strong>
         </a>
        {% else %} 
         <a href="{% url 'login' %}" class="navbar-brand d-flex align-items-center">
