@@ -1,0 +1,13 @@
+{% extends "Vet/base.html" %}
+
+{% load static %}
+
+{% block main %}
+<div style="margin-top:40px"></div>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Enviar">
+</form>
+</div>
+{% endblock %}

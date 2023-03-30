@@ -1,0 +1,13 @@
+{% extends "Vet/base.html" %}
+
+{% load static %}
+
+{% block main %}
+<div class="d-flex justify-content-center">
+    <div class="col col-8" style="text-align: center;">
+        <h1 class="mt-5"> Nombre mascosta: {{animal.nombre_animal}}</h1>
+        <p><img height="256px" src="{{animal.image_url}}"></p>
+        <p class="lead">Enfermedad:{{ animal.pre_diagnostico }}</p>
+    </div>
+</div>
+{% endblock %}

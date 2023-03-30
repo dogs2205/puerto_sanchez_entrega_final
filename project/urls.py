@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from Vet.views import index, AnimalList, AnimalMineList, AnimalUpdate, AnimalDelete, AnimalCreate, Login, Logout, SignUp
+from Vet.views import index, about,  AnimalList, AnimalMineList, AnimalUpdate, AnimalDelete, AnimalCreate, Login, Logout, SignUp, ProfileCreate, ProfileUpdate, AnimalDetail, MensajeCreate, MensajeDelete, MensajeList
 from django.conf import settings
 from django.conf.urls.static import static
 #from django.contrib.auth import views as auth_views
@@ -27,14 +27,21 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name="index"),
+    path('about/', about),
     path('animal/list', AnimalList.as_view(), name="animal-list"),
     path('animal/list/mine', AnimalMineList.as_view(), name="animal-mine"),
     path('animal/<pk>/update', AnimalUpdate.as_view(), name="animal-update"),
+    path('post/<pk>/detail', AnimalDetail.as_view(), name="animal-detail"),
     path('animal/<pk>/delete', AnimalDelete.as_view(), name="animal-delete"),
     path('animal/create', AnimalCreate.as_view(), name="animal-create"),
     path('login/', Login.as_view(), name="login"),
     path('logout/', Logout.as_view(), name="logout"),
     path('signup/', SignUp.as_view(), name="signup"),
+    path('profile/create', ProfileCreate.as_view(), name="profile-create"),
+    path('profile/<pk>/update', ProfileUpdate.as_view(), name="profile-update"),
+    path('mensaje/list', MensajeList.as_view(), name="mensaje-list" ),
+    path('mensaje/create', MensajeCreate.as_view(), name="mensaje-create" ),
+    path('mensaje/<pk>/delete', MensajeDelete.as_view(), name="mensaje-delete"),
     
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

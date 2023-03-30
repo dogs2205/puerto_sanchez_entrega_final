@@ -155,6 +155,11 @@
 <header data-bs-theme="dark">
   <div class="collapse text-bg-dark" id="navbarHeader">
     <div class="container">
+      {%if user.profile.avatar_url %}
+        <img src="{{user.profile.avatar_url}}" height="100%" width="64px">
+      {% else %}
+        <a href="https://getbootstrap.com/docs/5.3/examples/album/#" class="navbar-brand d-flex align-items-center">
+      {% endif %}
       <div class="row">
         <div class="col-sm-8 col-md-7 py-4">
           <h4>About</h4>
@@ -184,18 +189,35 @@
         <a href="{% url 'animal-list' %}" class="navbar-brand d-flex align-items-center">
           <strong>Inicio</strong>
         </a>
-
         <a href="{% url 'logout' %}" class="navbar-brand d-flex align-items-center">
           <strong>Hola {{user.username}} | Salir</strong>
         </a>
-       {% else %} 
+        {% if user.profile %}
+          <a href="{% url 'profile-update' user.profile.id %}" class="navbar-brand d-flex align-items-center">
+            <strong>Editar Profile</strong>
+          </a>
+          
+        {%else%}
+        
+          <a href="{% url 'profile-create' %}" class="navbar-brand d-flex align-items-center">
+            <strong>Crear perfil</strong>
+          </a>
+          
+        {%endif%}
         <a href="{% url 'login' %}" class="navbar-brand d-flex align-items-center">
           <strong>Login</strong>
         </a>
+        
+      {% else %} 
+        
         <a href="{% url 'signup' %}" class="navbar-brand d-flex align-items-center">
           <strong>Registrarse</strong>
         </a>
-        {% endif %}
+        <a href="{% url 'login' %}" class="navbar-brand d-flex align-items-center">
+          <strong>Login</strong>
+        </a>
+        
+      {% endif %}
       
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
