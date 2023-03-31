@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block main %}
-<h1>Esta seguro de borrar el Registro</h1>
+<h1>¿Está seguro de querer borrar este registro?</h1>
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{form.as_p}}

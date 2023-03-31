@@ -5,9 +5,15 @@
 {% block main %}
 <div class="d-flex justify-content-center">
     <div class="col col-8" style="text-align: center;">
-        <h1 class="mt-5"> Nombre mascosta: {{animal.nombre_animal}}</h1>
+        <h1 class="mt-5"> Nombre animal: {{animal.nombre_animal}}</h1>
+        <h2> Por favor ayudenos a costear el tratamiento</h2>
         <p><img height="256px" src="{{animal.image_url}}"></p>
-        <p class="lead">Enfermedad:{{ animal.pre_diagnostico }}</p>
+        <p class="lead"> {{ tipo_animal }}</p>
+        <p class="lead"> Edad: {{ animal.edad_animal }}</p>
+        <p class="lead">Enfermedad o tratamiento pendiente: {{ animal.pre_diagnostico }}</p>
+        <p class="lead"> Precio tratamiento: ${{ animal.precio_tratamiento }}</p>
+        <p class="lead">Acualizado en: {{ animal.creado_el }}</p> 
+        
     </div>
 </div>
 {% endblock %}

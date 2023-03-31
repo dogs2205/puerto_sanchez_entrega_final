@@ -15,6 +15,7 @@ def about (request):
 class AnimalList(ListView):
     model = Animal
     context_object_name= "animals"
+    
 
 class AnimalMineList(LoginRequiredMixin, AnimalList):
     

@@ -3,6 +3,8 @@
 {% load static %}
 
 {% block main %}
+<h1>Ingrese los datos del animal que necesitia ayuda</h1>
+<h2>No olvide llenar todos los datos</h2>
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{form.as_p}}
